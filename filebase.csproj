@@ -1,0 +1,59 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5C6753C-1E43-4FB6-A926-E736D31CC7E4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>filebase</AssemblyName>
+    <RootNamespace>filebase</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2007-11-06.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AZLib\COM\ActiveX\Utils.cs" />
+    <Compile Include="AZLib\StringUtils.cs" />
+    <Compile Include="AZLib\Win32\hresult.cs" />
+    <Compile Include="change.cs" />
+    <Compile Include="file.cs" />
+    <Compile Include="filebase.cs" />
+    <Compile Include="filebase.net.cs" />
+    <Compile Include="filelist.cs" />
+    <Compile Include="folder.cs" />
+    <Compile Include="folderlist.cs" />
+    <Compile Include="options.cs" />
+    <Compile Include="root.cs" />
+    <Compile Include="rootlist.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AZLib\COM\ActiveX\CS" />
+    <None Include="AZLib\Win32\CS" />
+    <None Include="folders.cfg" />
+    <None Include="folders.cfg2" />
+    <None Include="oldbase.fbs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
